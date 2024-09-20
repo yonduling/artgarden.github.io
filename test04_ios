@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Marker-based AR.js</title>
+  <!-- A-Frame 라이브러리 -->
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <!-- AR.js 라이브러리 -->
+  <script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+
+  <!-- A-Frame AR Scene 설정 -->
+  <a-scene embedded arjs="sourceType: webcam;">
+    
+    <!-- 커스터마이징된 마커 사용 (pattern-mark.patt) -->
+    <a-marker type="pattern" url="https://yourusername.github.io/yourrepository/pattern-mark.patt">
+      <!-- GLB 3D 모델 경로 설정 -->
+      <a-entity 
+        gltf-model="https://yourusername.github.io/yourrepository/models/yourmodel.glb"
+        scale="0.5 0.5 0.5"
+        position="0 0 0"
+        rotation="0 0 0">
+      </a-entity>
+    </a-marker>
+    
+    <!-- 카메라 설정 -->
+    <a-entity camera></a-entity>
+  
+  </a-scene>
+  
+</body>
+</html>
